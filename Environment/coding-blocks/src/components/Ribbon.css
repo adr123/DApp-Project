@@ -1,0 +1,143 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%; /* Ensure it occupies the full width of the screen */
+    overflow: hidden; /* No scrollbars */
+    box-sizing: border-box;
+  }
+  
+  /* Root and large container to span full width and height */
+  #root, #large {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%; /* Full width */
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically */
+    overflow: hidden; /* Prevent unnecessary scrollbars */
+  }
+  
+  /* Drag-drop area should fill remaining space */
+  #drag-drop {
+    flex: 1; /* Fill the remaining vertical space */
+    width: 100%; /* Stretch to full width */
+    overflow: hidden; /* Prevent horizontal scrollbars */
+  }
+
+  
+  header{
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Funnel Display';
+  }
+  .title-container {
+    display:flex;
+    background-color: #4e54c8; /* Custom color */
+    color: white; /* Title text color */
+  
+    text-align: left; /* Center the text */
+    margin: 0;
+    padding: 0 10px; /* Retain only necessary side padding */
+    box-sizing: border-box; /* Ensures padding doesn’t add to overall height */
+    height: 50px; /* Explicit height for consistent layout */
+  
+    position: relative;
+    justify-content: space-between;
+    align-items: center; /* Vertically aligns content in the center */
+  }
+  #walletContainer{
+    padding: 0px 5px 0px 0px;
+    text-align: center;
+    
+  }
+  #slot {
+    font-family: 'Funnel Display';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    height: 35px;
+    width: 135px;
+    padding: 0;
+    background: radial-gradient(circle, rgba(82, 78, 200, 1) 7%, rgba(78, 86, 200, 1) 47%, rgba(82, 78, 200, 1) 87%);
+    border-radius: 35px;
+    border: 2px solid white;
+    color: white;
+    font-weight: 100;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  }
+  
+  #slot:hover {
+    background: linear-gradient(135deg, rgba(100, 94, 240, 1), rgba(120, 102, 240, 1));
+    box-shadow: 0 0 10px rgba(120, 102, 240, 0.7), 0 0 20px rgba(120, 102, 240, 0.5);
+  }
+  
+  #slot:active {
+    transform: scale(0.95);
+  }
+  
+  #slot.loading {
+    cursor: not-allowed;
+    background: #333;
+    color: transparent; /* Hide text during loading */
+  }
+  
+  #slot.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid white;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .ribbon-buttons {
+    position: absolute;
+    top: 50%; /* Center vertically relative to ribbon height */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the center */
+    display: flex;
+    gap: 20px; /* Space between the buttons */
+  }
+  #b1{
+    background: linear-gradient(135deg, rgba(82, 78, 200, 1), rgba(100, 94, 240, 1)); /* Gradient matching aesthetics */
+  }
+  #b2{
+    background: linear-gradient(318deg, rgba(82, 78, 200, 1), rgba(100, 94, 240, 1)); /* Gradient matching aesthetics */
+  }
+  .ribbon-buttons button {
+    font-family: 'Funnel Display', sans-serif; /* Match the site's font */
+    
+    color: white; /* Button text color */
+    border-radius: 3px; /* Rounded edges */
+    padding: 6px 20px; /* Adjust button size */
+    font-size: 16px; /* Font size for clarity */
+    cursor: pointer; /* Indicate clickability */
+    transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  }
+  
+  .ribbon-buttons button:hover {
+    background: linear-gradient(135deg, rgba(100, 94, 240, 1), rgba(120, 102, 240, 1));
+    box-shadow: 0 0 10px rgba(120, 102, 240, 0.7), 0 0 20px rgba(120, 102, 240, 0.5);
+  }
+  
+  .ribbon-buttons button:active {
+    transform: scale(0.95); /* Slight shrink effect on click */
+  }
+  

@@ -1,0 +1,75 @@
+.page-container {
+    min-height: 100vh; /* Ensure it spans at least the full viewport height */
+    max-height: 100vh; /* Restrict the maximum height to the viewport */
+    overflow-y: auto !important; /* Enable vertical scrolling if content overflows */
+    overflow-x: hidden !important; /* Prevent horizontal scrollbars */
+    box-sizing: border-box !important; /* Include padding and borders in height calculations */
+    display: flex; /* Flexbox ensures the child content aligns properly */
+    flex-direction: column; /* Stack children vertically */
+    width: 100%; /* Ensure the container spans the full width */
+    padding-bottom: 50px; /* Add space at the bottom of the page */
+}
+
+.intro-container {
+    flex: 1; /* Allow the container to grow and shrink within the parent */
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto !important; /* Center the content horizontally */
+    color: #333;
+    font-family: "Arial", sans-serif;
+    line-height: 1.2; /* Reduced line height for tighter spacing */
+    box-sizing: border-box !important; /* Ensures the padding doesn't cause overflow */
+}
+
+#p1 {
+    text-align: center;
+}
+
+.intro-container h1 {
+    font-size: 2.5rem;
+    color: #4e54c8;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 1.2; /* Consistent tighter spacing */
+}
+
+.intro-container p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: justify;
+    word-wrap: break-word; /* Prevent long words from overflowing */
+    line-height: 1.2; /* Reduced line height */
+}
+
+.intro-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #4e54c8;
+    border-radius: 8px;
+    box-sizing: border-box; /* Ensure padding and border are included in dimensions */
+    line-height: 1.2; /* Reduced line height */
+}
+
+.intro-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #4e54c8;
+    line-height: 1.2; /* Consistent tighter spacing */
+}
+
+.intro-section ul {
+    margin: 10px 0;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.intro-section ul li {
+    margin-bottom: 4px; /* Reduced space between list items */
+    font-size: 1rem;
+    line-height: 1.2; /* Reduced line height */
+}
+
+.intro-container ul li strong {
+    color: #4e54c8;
+}

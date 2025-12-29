@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+
+/* Reset styles for the entire document */
+/* Container that wraps everything */
+#saveLoad {
+  font-family: "Gill Sans", sans-serif;
+
+  position: absolute; /* Hangs the container */
+  bottom: 25px; /* Distance below the purple banner */
+  right: 25px; /* Right side of the screen */
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 5px; /* Tight spacing between buttons */
+  align-items: flex-end;
+}
+
+/* Button styling */
+#saveLoad button {
+  background: #d3d3d326; /* Light gray for a bland look */
+  color: #333; /* Dark gray text for contrast */
+  border: 1px solid #00000010; /* Subtle border */
+  border-radius: 2px; /* Square-ish corners */
+  padding: 10px; /* Tight padding */
+  font-size: 12px; /* Small font size */
+  cursor: pointer;
+  width: 128px; /* Compact width */
+  text-align: center;
+  z-index:2;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+#saveLoad button:hover {
+  background: #c0c0c0; /* Slightly darker gray on hover */
+}
+
+#saveLoad button:active {
+  transform: scale(0.97); /* Slight shrink when pressed */
+}
+
+
+.title-container::after {
+  content: ""; /* Pseudo-element requires content */
+  position: absolute;
+  bottom: -1px; /* Slightly below the bottom edge */
+  left: 0;
+  width: 100%;
+  height: 10px; /* Height of the blur */
+  background: #4e54c8; /* Same color as the rectangle */
+  filter: blur(0.8px); /* Apply blur effect */
+  pointer-events: none; /* Prevents interaction */
+}
+
+/* src/App.css */
+.slide-enter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.slide-enter.slide-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 300ms ease;
+}
+
+.slide-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-exit.slide-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 300ms ease;
+}

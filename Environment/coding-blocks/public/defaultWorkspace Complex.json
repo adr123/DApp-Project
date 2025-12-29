@@ -1,0 +1,179 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "fallbackFunction",
+        "id": "I(CDoFNoA;7yvEq.ykJp",
+        "x": 40,
+        "y": 80
+      },
+      {
+        "type": "recievingFunction",
+        "id": "PRg8J.G?eAob1;xL%gr!",
+        "x": 280,
+        "y": 80,
+        "next": {
+          "block": {
+            "type": "return",
+            "id": "vYzyZ$6Q.?{ff4@GN,F$",
+            "inputs": {
+              "data": {
+                "block": {
+                  "type": "userString",
+                  "id": "Z3kO[b!Uv8yOI%DA=B8k",
+                  "fields": {
+                    "data": "Thank you!"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "generalFunction",
+        "id": "uC1R)V/VSrpPK0,ax8{-",
+        "x": 520,
+        "y": 80,
+        "extraState": {
+          "paramCount": 0
+        },
+        "fields": {
+          "name": "Check_Balance",
+          "operator": "by anybody"
+        },
+        "next": {
+          "block": {
+            "type": "ifelse",
+            "id": "?AS=XD#Q%Pv!F6El4%+;",
+            "inputs": {
+              "COND": {
+                "block": {
+                  "type": "checkCompare",
+                  "id": "_9o6Fo-FnIBi(1;]WW%B",
+                  "fields": {
+                    "comparator": "!="
+                  },
+                  "inputs": {
+                    "one": {
+                      "block": {
+                        "type": "messageInformation",
+                        "id": "gneHj}ViyA{2fo@+80qN",
+                        "fields": {
+                          "messageData": "address"
+                        }
+                      }
+                    },
+                    "two": {
+                      "block": {
+                        "type": "variables_get",
+                        "id": "]vj[63[b!7mNmFZ=m7Up",
+                        "fields": {
+                          "VAR": {
+                            "id": "U,45B^%I:qsO2HF][WZk"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "IF": {
+                "block": {
+                  "type": "emit",
+                  "id": "J^j$N[=[`#okBx_RQ;c(",
+                  "inputs": {
+                    "data": {
+                      "block": {
+                        "type": "string_join",
+                        "id": "yk^VE=7FENsJ1k7ogEBH",
+                        "inputs": {
+                          "one": {
+                            "block": {
+                              "type": "messageInformation",
+                              "id": "r9k?a$WD1rXB9zpj,8]O",
+                              "fields": {
+                                "messageData": "address"
+                              }
+                            }
+                          },
+                          "two": {
+                            "block": {
+                              "type": "userString",
+                              "id": "9:Dg=i@/?SrQ~Z1pXZE/",
+                              "fields": {
+                                "data": "has checked the balance of this contract"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "next": {
+              "block": {
+                "type": "return",
+                "id": "?[gs@$w(f4WM=xwD!^R$",
+                "inputs": {
+                  "data": {
+                    "block": {
+                      "type": "addressInformation",
+                      "id": "Zb#~JL[Jy0g9MpUuE4t=",
+                      "inputs": {
+                        "addressData": {
+                          "block": {
+                            "type": "contractOwner",
+                            "id": "^i40T3WDsOQ^?b|$J`Us"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "constructorFunction",
+        "id": "@3.MU6n^f=sv5b9OOO=k",
+        "x": 900,
+        "y": 80,
+        "next": {
+          "block": {
+            "type": "variables_set",
+            "id": ".!N98Isp.@Tr6B*i3_|Z",
+            "fields": {
+              "VAR": {
+                "id": "U,45B^%I:qsO2HF][WZk"
+              }
+            },
+            "inputs": {
+              "VALUE": {
+                "block": {
+                  "type": "messageInformation",
+                  "id": "N22~d?NvpvYHO#aiF0_6",
+                  "fields": {
+                    "messageData": "address"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "owner",
+      "id": "U,45B^%I:qsO2HF][WZk",
+      "type": "ADDRESS"
+    }
+  ]
+}
