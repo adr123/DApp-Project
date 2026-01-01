@@ -743,7 +743,6 @@ Blockly.Blocks["generalFunction"] = {
 
     // For any old variables named with the old function name,
     // rename them to the new function name:
-    const allBlocks = ws.getAllBlocks(false);
     const allVariables = ws.getAllVariables();
     const affectedVariables = allVariables.filter(
       (variable) => variable.type.endsWith(`::${oldName}`)
